@@ -1,6 +1,6 @@
 import Expense from "../models/Expense.mjs";
 
-const addExpense = async (req, res) => {
+export const addExpense = async (req, res) => {
   try {
     const { amount, category, date, description } = req.body;
 
@@ -29,7 +29,7 @@ const addExpense = async (req, res) => {
   }
 };
 
-const getExpenses = async (req , res) =>{
+export const getExpenses = async (req , res) =>{
     try {
         const {startDate , endDate , category , page = 1 , limit = 10} = req.query ;
 
@@ -74,7 +74,7 @@ const getExpenses = async (req , res) =>{
     }
 }
 
-const  getExpenseAnalytics = async(req,res) =>{
+export const  getExpenseAnalytics = async(req,res) =>{
 try {
   const userId = req.user._id ;
   const endDate = new Date() ;
